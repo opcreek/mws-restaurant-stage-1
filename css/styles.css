@@ -104,8 +104,10 @@ nav h1 a {
 	list-style: none;
 	background-color: #eee;
 	font-size: 17px;
+	height: 80px;
 	margin: 0;
-	width: calc(50% - 80px);
+	/* width: calc(50% - 80px); */
+	/* width: 100%; */
 }
 
 /* Display list items side by side */
@@ -145,7 +147,7 @@ nav h1 a {
 	height: 100%;
 	background-color: #3397db;
 	align-items: center;
-	padding: 10px 10px;
+	padding: 10px 0;
 }
 
 .filter-options h2 {
@@ -170,6 +172,9 @@ nav h1 a {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
 	background-color: #f3f3f3;
 	list-style: outside none none;
 	margin: 0;
@@ -185,7 +190,7 @@ nav h1 a {
 	min-height: 380px;
 	padding: 0 30px 25px;
 	text-align: left;
-	width: 270px;
+	width: 300px;
 }
 
 #restaurants-list .restaurant-img {
@@ -229,7 +234,7 @@ nav h1 a {
 /* ====================== Restaurant Details ====================== */
 .inside header {
 	position: fixed;
-	top: 0;
+	top: 10px;
 	width: 100%;
 	z-index: 1000;
 }
@@ -239,8 +244,9 @@ nav h1 a {
 	height: 87%;
 	position: fixed;
 	right: 0;
-	top: 80px;
-	width: 50%;
+	/* top: 100px; */
+	padding-top: 10px;
+	width: 100%;
 }
 
 .inside #map {
