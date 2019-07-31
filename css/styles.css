@@ -105,7 +105,7 @@ nav h1 a {
 	background-color: #eee;
 	font-size: 17px;
 	height: 80px;
-	margin: 0;
+	margin: 10px 0;
 	/* width: calc(50% - 80px); */
 	/* width: 100%; */
 }
@@ -259,6 +259,12 @@ nav h1 a {
 	bottom: 0;
 	position: absolute;
 	width: 50%;
+}
+
+#main-restaurant {
+	background-color: #f3f3f3;
+	min-height: 100%;
+	margin: 50px 0;
 }
 
 #restaurant-name {
