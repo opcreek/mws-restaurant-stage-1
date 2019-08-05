@@ -85,7 +85,7 @@ nav {
 	height: 80px;
 	background-color: #252831;
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 35px;
 }
 
 nav h1 {
@@ -101,7 +101,7 @@ nav h1 a {
 }
 
 #breadcrumb {
-	padding: 10px 40px 16px;
+	padding: 25px 40px;
 	list-style: none;
 	background-color: #eee;
 	font-size: 17px;
@@ -116,7 +116,7 @@ nav h1 a {
 }
 
 /* Add a slash symbol (/) before/behind each list item */
-#breadcrumb li + li:before {
+#breadcrumb li+li:before {
 	padding: 8px;
 	color: black;
 	content: "/\00a0";
@@ -325,6 +325,7 @@ nav h1 a {
 /* Tablet Styles & larger screens (desktop) */
 
 @media only screen and (min-width: 401px) {
+
 	#restaurant-details,
 	#restaurant-map {
 		display: flex;

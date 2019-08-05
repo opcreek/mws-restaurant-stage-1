@@ -19,15 +19,17 @@
   <!-- Beginning header -->
   <header>
     <!-- Beginning nav -->
-    <nav>
+    <nav aria-label="banner title" role="navigation">
       <h1><a href="/">Restaurant Reviews</a></h1>
-      <!-- Beginning breadcrumb -->
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <nav aria-label="breadcrumb" role="navigation">
       <ul id="breadcrumb">
         <li><a href="/">Home</a></li>
       </ul>
-      <!-- End breadcrumb -->
-      <!-- End nav -->
     </nav>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
   </header>
   <!-- End header -->
 
@@ -36,7 +38,7 @@
     <!-- Beginning map -->
     <div role="region" aria-label="restaurant detail" id="restaurant-details" tabindex="0">
       <section id="restaurant-container" aria-labelledby="restaurant-name restaurant-cuisine restaurant-address">
-        <h1 tabindex="0" id="restaurant-name"></h1>
+        <h2 tabindex="0" id="restaurant-name"></h2>
         <img id="restaurant-img">
         <p tabindex="0" id="restaurant-cuisine"></p>
         <p tabindex="0" id="restaurant-address"></p>
