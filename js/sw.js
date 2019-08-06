@@ -3,7 +3,7 @@ console.log('Service Worker registered!');
 // wait for install event to complete then load all files in cache
 self.addEventListener('install', function (event) {
     event.waitUntil(
-        caches.open('restaurant-files')
+        caches.open('restaurant-url-v1')
         .then(function (cache) {
             console.log('cache loaded');
             return cache.addAll([
@@ -25,7 +25,6 @@ self.addEventListener('install', function (event) {
                 '/js/dbhelper.js',
                 '/js/main.js',
                 '/js/restaurant_info.js',
-                '/js/sw.js',
                 'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
             ]);
         })
@@ -40,9 +39,25 @@ self.addEventListener('install', function (event) {
 self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request).then(function (response) {
-            return response || fetch(event.request);
+            if (response) {
+                return response;
+            }
+            fetchRequest(event);
         }).catch(function (err) {
             console.error(err);
         })
     );
 });
+
+async function fetchRequest(event) {
+    const url = event.request.clone();
+
+    const response = await fetch(url);
+    if (!response || response.status !== 200 || response.type !== 'basic') {
+        return response;
+    }
+    const clonedResponse = response.clone();
+    caches.open('restaurant-url-v1').then(function (cache) {
+        cache.put(event.request, clonedResponse);
+    });
+}
